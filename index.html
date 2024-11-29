@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<!--    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>-->
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="res/css/style.css">
+
+    <title>아 집가고 싶다</title>
+</head>
+<body>
+    <div class="container">
+        <div class="loading">
+            <p style="color: #FFFFFF; font-size: 1.4rem;">보석 정보를 초기화하고있습니다.</p>
+        </div>
+        <h3 class="mt-3">내 원정대의 보석 가치는 얼마나 되지?</h3>
+        <hr>
+        <div class="input-group">
+            <div class="input-group-prepend">
+                <span class="input-group-text">캐릭터명</span>
+            </div>
+            <input type="text" class="form-control" id="nickname" value="">
+            <button type="button" class="btn btn-primary" onclick="app.getCharacters();">조회</button>
+            <button type="button" class="btn btn-info" onclick="app.reset();">초기화</button>
+        </div>
+
+        <div class="">
+            <hr>
+            <div class="card">
+                <h5 class="card-header">원정대 전체 보석 가치</h5>
+                <h3 class="card-body">
+                    <div class="d-flex">
+                        <div>Total: </div>
+                        <div class="text-right w-100"><span id="total_price">0</span> Gold</div>
+                    </div>
+                </h3>
+
+                <div>
+                    <div class="card-body pt-0 total-value"></div>
+                </div>
+            </div>
+<!--            <div class="mt-3">-->
+<!--                <div class="card">-->
+<!--                    <h5 class="card-header">1</h5>-->
+<!--                    <div class="card-body">-->
+
+<!--                        <div class="w-100 d-flex">-->
+<!--                            <div class="p-1 w-75">123</div>-->
+<!--                            <div class="p-1">123212312312123</div>-->
+<!--                        </div>-->
+
+<!--                        <div class="w-100 d-flex">-->
+<!--                            <div class="p-1 w-75">123</div>-->
+<!--                            <div class="p-1">123212312312123</div>-->
+<!--                        </div>-->
+
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+        </div>
+    </div>
+
+</body>
+</html>
+
+<script id="gem_card" type="text/html">
+    <div class="w-100 d-flex">
+        <div class="p-1 w-75">{{gem_info}}</div>
+        <div class="p-1">{{gem_cnt}}</div>
+    </div>
+</script>
+
+<script id="character_card" type="text/html">
+    <div class="mt-3">
+        <div class="card">
+            <h5 class="card-header">1</h5>
+            <div class="card-body">
+
+                <div class="w-100 d-flex">
+                    <div class="p-1 w-75">123</div>
+                    <div class="p-1">123212312312123</div>
+                </div>
+
+                <div class="w-100 d-flex">
+                    <div class="p-1 w-75">123</div>
+                    <div class="p-1">123212312312123</div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</script>
+
+<script>
+    const script = document.createElement('script');
+    script.src = 'res/js/app.js?v=' + new Date().getTime();
+    document.head.appendChild(script);
+</script>
