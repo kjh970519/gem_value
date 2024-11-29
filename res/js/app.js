@@ -134,6 +134,7 @@ $(document).ready(function() {
             $("#nickname").val('');
             $(".total-value").empty();
             $("#total_price").html(0);
+            app.characters = [];
         },
         ajax: function (ep, data=null) {
             return new Promise((resolve, reject) => {
